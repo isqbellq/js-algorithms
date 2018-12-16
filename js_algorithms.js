@@ -1,11 +1,8 @@
 "use strict" 
 
-/* You are given two arrays and an index.
-   Use the array methods slice and splice to copy each element 
-   of the first array into the second array, in order.
-   Begin inserting elements at index n of the second array.
-   Return the resulting array. The input arrays should 
-   remain the same after the function runs. */
+/* Copy each element of the first array into the second array, 
+   in order. Begin inserting elements at index n of the second array.
+   The input arrays should remain the same. */
 
 function frankenSplice(arr1, arr2, n) {
 	let copy = arr2;
@@ -44,9 +41,8 @@ mutation(["hello", "hey"]);
 
 
 
-/* Write a function that splits an array (first argument)
-   into groups the length of size (second argument) 
-   and returns them as a two-dimensional array. */
+/* Split an array into groups the length of size 
+   and return them as a two-dimensional array. */
 
 function chunkArrayInGroups(arr, size) {
 	let newArr = [];
@@ -62,10 +58,7 @@ chunkArrayInGroups(["a", "b", "c", "d"], 2);
 
 
 
-/* Compare two arrays and return a new array with any 
-   items only found in one of the two given arrays, 
-   but not both. In other words, return the symmetric 
-   difference of the two arrays. */
+/* Return the symmetric difference of two arrays. */
 
 function diffArray(arr1, arr2) {
 	let newArr = [];
@@ -80,3 +73,55 @@ function diffArray(arr1, arr2) {
 }
 
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+
+
+/* Find out if a number is a prime number. */
+
+function isPrime(num) {
+
+	for (let i = 2; i < num; i++) {
+		if (num % i === 0) return false;
+	} return num > 1;
+}
+
+isPrime(1001);
+
+
+
+/* Reverse a string */
+
+function reverse(str){
+  let reversed = '';
+  
+  for(let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
+
+reverse('hi hello');
+
+// or #2
+
+function reverse (str) {
+    if (str === "") {
+        return "";
+    } else {
+        return reverse(str.substr(1)) + str.charAt(0);
+    }
+}
+
+// or #3
+
+function reverse(str){
+	if(str.length < 2) return str;
+
+	return str.split("").reverse().join("");
+}
+
+
+
+/*
+
+
