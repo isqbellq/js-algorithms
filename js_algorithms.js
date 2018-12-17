@@ -220,5 +220,15 @@ binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 0110
 
 
 
+/* Find the factorial of an integer. */ 
 
+function factorial(num) { 
+	let acc = 1;
+	
+	for (let i = num; i >= 1; i--) {
+		acc *= i;
+	}
+	return acc;
+}
 
+factorial(7);
