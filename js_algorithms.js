@@ -81,11 +81,40 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 function isPrime(num) {
 
 	for (let i = 2; i < num; i++) {
-		if (num % i === 0) return false;
-	} return num > 1;
+		if (num % i === 0) {
+			return false;
+		}
+	} 
+	return num > 1;
 }
 
 isPrime(1001);
+
+
+/* Sum all the prime numbers up to and including a number. */
+
+function isPrime(num){
+  for(let i = 2; i < num; i++){
+    if (num % i === 0){
+      return false;
+    }
+  }
+  return true;
+}
+
+
+function sumPrimes(num) {
+let sum = 0;
+
+for (let i = 2; i <= num; i++) {
+		if (isPrime(i)) {
+        sum += i;
+    } 
+}  
+return sum;
+}
+
+sumPrimes(10);
 
 
 
@@ -122,6 +151,74 @@ function reverse(str){
 
 
 
-/*
+/* Convert a string to-spinal-case */ 
+
+function spinalCase(str) {
+	return str.split(/\s|_|(?=[A-Z])/).join("-").toLowerCase();
+}
+
+spinalCase('This Is Spinal Tap');
+
+
+
+/* Return a n element in Fibonacci sequence */
+
+function fib(n){
+  let arr = [0, 1];
+
+  for (let i = 2; i <= n; i++){
+    arr.push(arr[i - 2] + arr[i - 1]);
+  }
+  return arr[n];
+}
+
+
+
+/* Iterate through arr and remove each element starting from 
+   the first element until the function returns true when
+   the iterated element is passed through it. */
+
+function dropElements(arr, func) {
+    while(!func(arr[0])) {
+    arr.shift();
+  }
+  return arr;
+}
+
+dropElements([0, 1, 0, 1], function(n) {return n === 1;});
+
+
+
+/* Flatten a nested array, accounting for varying levels of nesting. */
+
+function steamrollArray(arr) {
+	let flattened = [].concat(...arr);
+
+	if (flattened.some(Array.isArray)) {
+		return steamrollArray(flattened);
+	}
+	return flattened;
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);
+
+
+
+/* Convert a string from binary code to English. */
+
+function binaryAgent(str) {
+ let splitted = str.split(" ");
+ let english = [];
+
+ for(let i = 0; i < splitted.length; i++) {
+   english.push(String.fromCharCode(parseInt(splitted[i], 2)));
+      }
+  return english.join("");
+}
+
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+
+
+
 
 
