@@ -224,7 +224,7 @@ binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 0110
 
 function factorial(num) { 
 	let acc = 1;
-	
+
 	for (let i = num; i >= 1; i--) {
 		acc *= i;
 	}
@@ -232,3 +232,20 @@ function factorial(num) {
 }
 
 factorial(7);
+
+
+
+/* Find the length of longest word in a string. */
+
+function longestWordLength(str) {
+  let words = str.split(" ");
+  let max = 0;
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > max) {
+      max = words[i].length;
+    }
+  }
+  return max;
+}
+
