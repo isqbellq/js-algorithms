@@ -17,7 +17,7 @@ function frankenSplice(arr1, arr2, n) {
 	return result;
 }
 
-frankenSplice([1, 2, 3], [4, 5, 6], 1);
+frankenSplice([1, 2, 3], [4, 5, 6], 1); // 4,1,2,3,5,6
 
 
 
@@ -37,7 +37,7 @@ function mutation(arr) {
 	return true;
 }
 
-mutation(["hello", "hey"]);
+mutation(["hello", "hey"]); // false
 
 
 
@@ -54,7 +54,7 @@ function chunkArrayInGroups(arr, size) {
 	return newArr;
 }
 
-chunkArrayInGroups(["a", "b", "c", "d"], 2);
+chunkArrayInGroups(["a", "b", "c", "d"], 2); // a,b,c,d
 
 
 
@@ -72,7 +72,7 @@ function diffArray(arr1, arr2) {
 	return newArr;
 }
 
-diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); // 4
 
 
 
@@ -88,7 +88,8 @@ function isPrime(num) {
 	return num > 1;
 }
 
-isPrime(1001);
+isPrime(1001); // false
+
 
 
 /* Sum all the prime numbers up to and including a number. */
@@ -114,7 +115,7 @@ for (let i = 2; i <= num; i++) {
 return sum;
 }
 
-sumPrimes(10);
+sumPrimes(10); // 17
 
 
 
@@ -129,7 +130,7 @@ function reverse(str){
   return reversed;
 }
 
-reverse('hi hello');
+reverse('hi hello'); // olleh ih
 
 // or #2
 
@@ -141,6 +142,8 @@ function reverse (str) {
     }
 }
 
+reverse('hi hello'); // olleh ih
+
 // or #3
 
 function reverse(str){
@@ -149,15 +152,17 @@ function reverse(str){
 	return str.split("").reverse().join("");
 }
 
+reverse('hi hello'); // olleh ih
 
 
-/* Convert a string to-spinal-case */ 
+
+/* Convert a string to spinal case */ 
 
 function spinalCase(str) {
 	return str.split(/\s|_|(?=[A-Z])/).join("-").toLowerCase();
 }
 
-spinalCase('This Is Spinal Tap');
+spinalCase('This Is Spinal Tap'); // this-is-spinal-tap
 
 
 
@@ -172,6 +177,8 @@ function fib(n){
   return arr[n];
 }
 
+fib(8); // 21
+
 
 
 /* Iterate through arr and remove each element starting from 
@@ -185,7 +192,7 @@ function dropElements(arr, func) {
   return arr;
 }
 
-dropElements([0, 1, 0, 1], function(n) {return n === 1;});
+dropElements([0, 1, 0, 1], function(n) {return n === 1;}); // 1,0,1
 
 
 
@@ -200,7 +207,7 @@ function steamrollArray(arr) {
 	return flattened;
 }
 
-steamrollArray([1, [2], [3, [[4]]]]);
+steamrollArray([1, [2], [3, [[4]]]]); // 1,2,3,4
 
 
 
@@ -216,7 +223,7 @@ function binaryAgent(str) {
   return english.join("");
 }
 
-binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"); // Aren't bonfires fun!?
 
 
 
@@ -231,7 +238,7 @@ function factorial(num) {
 	return acc;
 }
 
-factorial(7);
+factorial(7); // 5040
 
 
 
@@ -248,6 +255,8 @@ function longestWordLength(str) {
   }
   return max;
 }
+
+longestWordLength("Well this is probably a random sentence"); // 8
 
 
 
@@ -284,4 +293,5 @@ var Person = function(firstAndLast) {
 
 var bob = new Person('Bob Ross');
 bob.getFirstName();
+
 
