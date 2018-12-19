@@ -264,7 +264,7 @@ longestWordLength("Well this is probably a random sentence"); // 8
    getFirstName() getLastName() getFullName() setFirstName(first) 
    setLastName(last) setFullName(firstAndLast)*/
 
-var Person = function(firstAndLast) {
+let Person = function(firstAndLast) {
 
 	this.getFullName = function() {
 		return firstAndLast;
@@ -291,7 +291,100 @@ var Person = function(firstAndLast) {
 	};
 };
 
-var bob = new Person('Bob Ross');
+let bob = new Person('Bob Ross');
 bob.getFirstName();
+
+
+
+/* Return a new array that transforms the elements' average 
+   altitude into their orbital periods. */
+
+function orbitalPeriod(arr) {
+	let GM = 398600.4418;
+	let earthRadius = 6367.4447;
+
+	for (let item of arr) {
+		let period = Math.round(2 * Math.PI * Math.sqrt(Math.pow(item.avgAlt + earthRadius, 3) / GM));
+		delete item.avgAlt;
+		item.orbitalPeriod = period;
+	}
+
+	return arr;
+}
+
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); // [{name: "sputnik", orbitalPeriod: 86400}]
+
+
+
+/* Find out if a string is a palindrome, making sure to 
+   ignore all symbols, spaces, and punctuation. */
+
+function palindrome(str) {
+
+	return str.replace(/[\W_]/g, "").toLowerCase() === str.replace(/[\W_]/g, "").toLowerCase().split("").reverse().join("");
+}
+
+palindrome("eye"); // true
+
+// or #2
+
+function palindrome(str) {
+	str = str.replace(/[\W_]/g, "").toLowerCase();
+	let letters = str.length - 1;
+
+	for (let i = 0; i < letters/2; i++) {
+		if (str[i] !== str[letters - i]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+palindrome("eye"); // true
+
+// or #3
+
+function palindrome(str) {
+      let start = 0
+      let end = str.length - 1
+
+      while (end > start) {
+        if (str[start].match(/[\W_]/)) {
+        	start++;
+        	continue;
+        }
+        if (str[end].match(/[\W_]/)) {
+        	end--;
+        	continue;
+        }
+        if (str[start].toLowerCase() !== str[end].toLowerCase()) {
+        	return false;
+        }
+        	start++;
+        	end--;
+    }
+      return true;
+  }
+
+
+
+  /* Convert a number into a roman numeral. */
+
+  let convertToRoman = function(num) {
+
+  	let decimal = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+  	let romanNumeral = [ "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" ];
+  	let roman = "";
+
+  	for (let index = 0; index < decimal.length; index++) {
+  		while (decimal[index] <= num) {
+  			roman += romanNumeral[index];
+  			num -= decimal[index];
+  		}
+  	}
+  	return roman;
+  }
+
+convertToRoman(36); // XXXVI
 
 
