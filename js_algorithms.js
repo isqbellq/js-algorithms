@@ -370,7 +370,7 @@ function palindrome(str) {
 
   /* Convert a number into a roman numeral. */
 
-  let convertToRoman = function(num) {
+  function convertToRoman(num) {
 
   	let decimal = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
   	let romanNumeral = [ "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" ];
@@ -388,3 +388,35 @@ function palindrome(str) {
 convertToRoman(36); // XXXVI
 
 
+
+/* Take a ROT13 encoded string as input and return a decoded 
+   string. Letters are shifted by 13 places. */
+
+function rot13(str) { 
+	return str.replace(/[A-Z]/g, letter => String.fromCharCode((letter.charCodeAt(0) % 26) + 65));
+}
+
+console.log(rot13("LBH QVQ VG!")); // YOU DID IT!
+
+// or #2
+
+function rot13(str) {
+  let string = "";
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    let code = char.charCodeAt(0);
+
+    if (char.match(/[A-Z]/)) {
+      if (code > 77) {
+        char = String.fromCharCode(code - 13);
+      } else {
+        char = String.fromCharCode(code + 13);
+      }
+    }
+    string += char;
+  }
+  return string;
+}
+
+console.log(rot13("LBH QVQ VG!")); // YOU DID IT!
