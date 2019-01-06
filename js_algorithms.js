@@ -368,22 +368,21 @@ function palindrome(str) {
 
 
 
-  /* Convert a number into a roman numeral. */
+/* Convert a number into a roman numeral. */
 
-  function convertToRoman(num) {
+function convertToRoman(num) {
 
-  	let decimal = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
-  	let romanNumeral = [ "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" ];
-  	let roman = "";
+  let decimal = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+  let romanNumeral = [ "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" ];  	let roman = "";
 
-  	for (let index = 0; index < decimal.length; index++) {
-  		while (decimal[index] <= num) {
-  			roman += romanNumeral[index];
-  			num -= decimal[index];
-  		}
-  	}
-  	return roman;
-  }
+  for (let index = 0; index < decimal.length; index++) {
+    while (decimal[index] <= num) {
+     roman += romanNumeral[index];
+     num -= decimal[index];
+   }
+ }
+ return roman;
+}
 
 convertToRoman(36); // XXXVI
 
@@ -420,3 +419,25 @@ function rot13(str) {
 }
 
 console.log(rot13("LBH QVQ VG!")); // YOU DID IT!
+
+
+/* Find the hamming distance between two strings */
+
+function hammingDistance(a, b) {
+ 
+  let distance = 0;
+
+  if (a.length !== b.length) {
+     for (let i = 0; i < a.length; i += 1) {
+        if (a[i] !== b[i]) {
+          distance += 1;
+        }
+      }
+    }
+
+  return distance;
+}
+
+console.log(hammingDistance("hello", "hi")); // 4
+
+
