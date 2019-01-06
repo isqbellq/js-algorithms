@@ -427,17 +427,17 @@ function hammingDistance(a, b) {
  
   let distance = 0;
 
-  if (a.length !== b.length) {
-     for (let i = 0; i < a.length; i += 1) {
-        if (a[i] !== b[i]) {
-          distance += 1;
-        }
+  if (a.length === b.length) {
+      for (let i = 0; i < a.length; i++) {
+          if (a[i] !== b[i]) {
+              distance += 1;
+          }
       }
-    }
+  }
 
   return distance;
 }
 
-console.log(hammingDistance("hello", "hi")); // 4
+console.log(hammingDistance("teeth", "reach")); // 3
 
 
