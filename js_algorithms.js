@@ -470,6 +470,7 @@ function fib(number) {
       sum += fibonacci[i];
     }
   }
+  return sum;
 }
 
 console.log(fib(4000000)); 
