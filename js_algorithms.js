@@ -345,26 +345,28 @@ palindrome("eye"); // true
 // or #3
 
 function palindrome(str) {
-      let start = 0
-      let end = str.length - 1
+  let start = 0
+  let end = str.length - 1
 
-      while (end > start) {
-        if (str[start].match(/[\W_]/)) {
-        	start++;
-        	continue;
-        }
-        if (str[end].match(/[\W_]/)) {
-        	end--;
-        	continue;
-        }
-        if (str[start].toLowerCase() !== str[end].toLowerCase()) {
-        	return false;
-        }
-        	start++;
-        	end--;
+  while (end > start) {
+    if (str[start].match(/[\W_]/)) {
+    	start++;
+      continue;
     }
-      return true;
+    if (str[end].match(/[\W_]/)) {
+      end--;
+      continue;
+    }
+    if (str[start].toLowerCase() !== str[end].toLowerCase()) {
+      return false;
+    }
+    
+    start++;
+    end--;
   }
+  
+  return true;
+}
 
 
 
@@ -424,20 +426,30 @@ console.log(rot13("LBH QVQ VG!")); // YOU DID IT!
 /* Find the hamming distance between two strings */
 
 function hammingDistance(a, b) {
- 
   let distance = 0;
 
   if (a.length === b.length) {
-      for (let i = 0; i < a.length; i++) {
-          if (a[i] !== b[i]) {
-              distance += 1;
-          }
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] !== b[i]) {
+        distance += 1;
       }
+    }
   }
-
   return distance;
 }
 
 console.log(hammingDistance("teeth", "reach")); // 3
 
 
+/* Find the sum of all the multiples of 3 and 5 below 1000 */
+
+function sum(number) {
+  let total = 0;
+
+  for (i = 0; i < number; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      total += i;
+    }
+  }
+  return total;
+}
