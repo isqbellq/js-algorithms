@@ -441,15 +441,35 @@ function hammingDistance(a, b) {
 console.log(hammingDistance("teeth", "reach")); // 3
 
 
-/* Find the sum of all the multiples of 3 and 5 below 1000 */
+/* Find the sum of all the multiples of 3 or 5 below 1000 */
 
 function sum(number) {
   let total = 0;
 
   for (i = 0; i < number; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
+    if (i % 3 === 0 || i % 5 === 0) {
       total += i;
     }
   }
   return total;
 }
+
+console.log(sum(10)); // 233168
+
+
+// By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
+
+function fib(number) {
+  let sum = 0; 
+  let fibonacci = [0, 1];
+
+  for (i = 2; i <= number; i++) {
+    fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+      
+    if (fibonacci[i] % 2 === 0) {
+      sum += fibonacci[i];
+    }
+  }
+}
+
+console.log(fib(4000000)); 
