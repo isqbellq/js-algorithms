@@ -474,3 +474,22 @@ function fib(number) {
 }
 
 console.log(fib(4000000)); 
+
+
+// Find the largest prime factor of the number 600851475143 
+
+function largestPrime(number) {
+  let i = 2;
+  let largest = 1;
+
+  while (i <= number) {
+    if (number % i === 0) {
+      largest = i;
+      number = number /= i;
+    } 
+    else i++;
+  } 
+  return largest;
+}
+
+console.log(largestPrime(600851475143));
