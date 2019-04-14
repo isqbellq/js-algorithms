@@ -122,12 +122,12 @@ sumPrimes(10); // 17
 /* Reverse a string */
 
 function reverse(str){
-  let reversed = '';
+    let reversed = '';
   
-  for(let i = str.length - 1; i >= 0; i--) {
+    for(let i = str.length - 1; i >= 0; i--) {
     reversed += str[i];
-  }
-  return reversed;
+    }
+    return reversed;
 }
 
 reverse('hi hello'); // olleh ih
@@ -169,12 +169,12 @@ spinalCase('This Is Spinal Tap'); // this-is-spinal-tap
 /* Return a n element in Fibonacci sequence */
 
 function fib(n){
-  let arr = [0, 1];
+    let arr = [0, 1];
 
-  for (let i = 2; i <= n; i++){
-    arr.push(arr[i - 2] + arr[i - 1]);
-  }
-  return arr[n];
+    for (let i = 2; i <= n; i++){
+      arr.push(arr[i - 2] + arr[i - 1]);
+    }
+    return arr[n];
 }
 
 fib(8); // 21
