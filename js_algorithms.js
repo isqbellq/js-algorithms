@@ -97,12 +97,12 @@ isPrime(1001); // false
 /* Sum all the prime numbers up to and including a number. */
 
 function isPrime(num){
-    for(let i = 2; i < num; i++){
-        if (num % i === 0){
-            return false;
-        }
-    }
-    return true;
+      for(let i = 2; i < num; i++){
+          if (num % i === 0){
+              return false;
+          }
+      }
+      return true;
 }
 
 
