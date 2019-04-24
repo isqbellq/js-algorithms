@@ -486,13 +486,13 @@ function largestPrime(number) {
     let largest = 1;
 
     while (i <= number) {
-      if (number % i === 0) {
-        largest = i;
-        number = number /= i;
-      } 
-      else i++;
+        if (number % i === 0) {
+            largest = i;
+            number = number /= i;
+        } 
+        else i++;
     } 
-    return largest;
+        return largest;
 }
 
 console.log(largestPrime(600851475143));
