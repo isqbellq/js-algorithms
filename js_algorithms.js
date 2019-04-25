@@ -1,5 +1,3 @@
-// RANDOM ALGORITHMS
-
 "use strict" 
 
 /* Copy each element of the first array into the second array, 
