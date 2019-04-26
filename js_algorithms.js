@@ -170,12 +170,12 @@ spinalCase('This Is Spinal Tap'); // this-is-spinal-tap
 /* Return a n element in Fibonacci sequence */
 
 function fib(n){
-    let arr = [0, 1];
+      let arr = [0, 1];
 
-    for (let i = 2; i <= n; i++){
-      arr.push(arr[i - 2] + arr[i - 1]);
-    }
-    return arr[n];
+      for (let i = 2; i <= n; i++){
+          arr.push(arr[i - 2] + arr[i - 1]);
+      }
+      return arr[n];
 }
 
 fib(8); // 21
