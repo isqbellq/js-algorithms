@@ -148,7 +148,7 @@ reverse('hi hello'); // olleh ih
 // or #3
 
 function reverse(str){
-	if(str.length < 2) return str;
+	if (str.length < 2) return str;
 
 	return str.split("").reverse().join("");
 }
