@@ -157,7 +157,7 @@ reverse('hi hello'); // olleh ih
 
 
 
-/* Convert a string to spinal case */ 
+/* Convert a string to "spinal case" */ 
 
 function spinalCase(str) {
 	return str.split(/\s|_|(?=[A-Z])/).join("-").toLowerCase();
