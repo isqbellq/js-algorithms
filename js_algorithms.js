@@ -346,20 +346,20 @@ palindrome("eye"); // true
 // or #3
 
 function palindrome(str) {
-  let start = 0
-  let end = str.length - 1
+    let start = 0
+    let end = str.length - 1
 
-  while (end > start) {
-    if (str[start].match(/[\W_]/)) {
-    	start++;
-      continue;
+    while (end > start) {
+        if (str[start].match(/[\W_]/)) {
+    	    start++;
+        continue;
     }
     if (str[end].match(/[\W_]/)) {
-      end--;
-      continue;
+        end--;
+        continue;
     }
     if (str[start].toLowerCase() !== str[end].toLowerCase()) {
-      return false;
+        return false;
     }
     
     start++;
