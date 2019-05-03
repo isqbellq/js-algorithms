@@ -379,10 +379,10 @@ function convertToRoman(num) {
   let romanNumeral = [ "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" ];  	let roman = "";
 
   for (let index = 0; index < decimal.length; index++) {
-    while (decimal[index] <= num) {
-     roman += romanNumeral[index];
-     num -= decimal[index];
-   }
+      while (decimal[index] <= num) {
+         roman += romanNumeral[index];
+         num -= decimal[index];
+     }
  }
  return roman;
 }
