@@ -468,7 +468,7 @@ function fib(number) {
     fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
       
     if (fibonacci[i] % 2 === 0) {
-      sum += fibonacci[i];
+        sum += fibonacci[i];
     }
   }
   return sum;
