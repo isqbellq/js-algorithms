@@ -219,7 +219,7 @@ function binaryAgent(str) {
    let english = [];
 
    for(let i = 0; i < splitted.length; i++) {
-     english.push(String.fromCharCode(parseInt(splitted[i], 2)));
+       english.push(String.fromCharCode(parseInt(splitted[i], 2)));
         }
     return english.join("");
 }
