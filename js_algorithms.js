@@ -188,7 +188,7 @@ fib(8); // 21
 
 function dropElements(arr, func) {
     while(!func(arr[0])) {
-    arr.shift();
+      arr.shift();
   }
   return arr;
 }
