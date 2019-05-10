@@ -382,9 +382,9 @@ function convertToRoman(num) {
       while (decimal[index] <= num) {
          roman += romanNumeral[index];
          num -= decimal[index];
-     }
- }
- return roman;
+      }
+  }
+  return roman;
 }
 
 convertToRoman(36); // XXXVI
